@@ -1,0 +1,243 @@
+*
+{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+header{
+    display: flex;
+    border-radius: 50px;
+    padding: 10px;
+    border: 4px solid black;
+    height: 20vh;    
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 15px;
+    border: 8px inset #08587de3;
+}
+header:hover{
+    background-color: rgb(224, 223, 223);
+}
+header{
+    transition-property: background-color;
+    transition-duration: 0.3s;
+    transition-timing-function: ease-in;
+}
+ul{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+div > img{
+    width:60%;
+    height:60%;
+}
+ul li a{
+    text-decoration: none; /* Sin subrayado en los enlaces */
+    color: rgb(16, 0, 116); 
+    font-weight: bold; /* Texto en negrita */
+    padding: 20px; 
+}
+ul li{
+    margin: 8px;
+    border-radius: 50px;
+}
+ul li:hover{
+    background-color: rgb(39, 28, 255);
+}
+ul li{
+    transition-property: background-color;
+    transition-duration: 0.5s;
+    transition-behavior: ease-in;
+}
+h1{
+    font-size: 50px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; 
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+#logo
+{
+    width: 11%;
+    height: 90%;
+}
+#cartas {
+    display: flex;
+    flex-wrap: wrap; /* Permite que las cartas se distribuyan en varias filas si es necesario */
+    justify-content: space-around; /* Distribuye las cartas uniformemente */
+}
+p{
+    font-size: 30px;
+}
+
+.carta-contenedor {
+    perspective: 1000px; /* Para la vista en 3D */
+    width: 25%; /* Para que entren 3 cartas en una fila */
+    margin: 15px;
+}
+
+.carta {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 300px; /* Fijamos el alto de la carta */
+    padding: 0;
+    position: relative;
+    transform-style: preserve-3d; /* Habilitar el 3D */
+    transition: transform 0.8s;
+    box-sizing: border-box;
+    text-align: center;
+    
+    /* Borde aplicado directamente a la carta, cubriendo ambos lados */
+    border: 8px inset #08587de3;
+    border-radius: 15px; /* Mantiene el borde redondeado */
+}
+
+.carta-frontal, .carta-trasera {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden; /* Oculta la parte trasera */
+    border-radius: 15px; /* Aseguramos que ambas caras respeten el radio */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    transition: background-color 0.3s ease; /* Transición para el cambio de color */
+}
+
+/* Efecto hover para cambiar el color de fondo de las caras frontal y trasera */
+.carta-frontal:hover, .carta-trasera:hover {
+    background-color: rgb(224, 223, 223); /* Cambia el color de fondo cuando se pasa el ratón */
+}
+
+.carta-frontal {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.carta-trasera {
+    background-color: #f8f9fa;
+    transform: rotateY(180deg); /* Oculta la parte trasera inicialmente */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centra el contenido horizontalmente */
+    justify-content: center; /* Centra el contenido verticalmente */
+    box-sizing: border-box;
+}
+
+.carta.rotar {
+    transform: rotateY(180deg); /* Gira la carta al hacer clic */
+}
+
+.carta-trasera {
+    display: flex;
+    flex-direction: column; /* Organiza elementos verticalmente */
+    justify-content: space-around; /* Separa los elementos para que uno esté arriba y otro abajo */
+    height: 100%; /* Ajusta al tamaño completo del contenedor */
+    padding: 5px;
+}
+
+.carta-trasera img.tipo {
+    height: 100%;
+    width: 60px;
+    margin-left: 10px;
+}
+
+.carta-trasera > p {
+    font-size: 20px;
+    margin: 0;
+    text-align: center; /* Centra el texto en la parte inferior */
+}
+
+.carta-trasera > div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 60px;
+}
+
+/* Estilos para cada partido */
+.divBatalla {
+    background-color: #ffffff; /* Fondo blanco */
+    border: 1px solid #ddd; /* Borde gris claro */
+    border-radius: 5px; /* Bordes redondeados */
+    padding: 15px; /* Espaciado interno */
+    margin: 10px 0; /* Margen superior e inferior */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+    transition: transform 0.3s; /* Transición suave al pasar el mouse */
+}
+
+.divBatalla:hover {
+    transform: scale(1.02); /* Aumentar ligeramente al pasar el mouse */
+}
+
+/* Estilo de los títulos de los partidos */
+.divBatalla h3 {
+    color: #000d9a; /* Color de los títulos de partidos */
+}
+
+/* Estilo de los párrafos dentro de los partidos */
+.divBatalla p {
+    color: rgb(0, 122, 136); /* Color del texto de descripción */
+    margin: 0; /* Sin margen */
+}s
+
+#sobre-nosotros {
+    padding: 20px;
+    background-color: #f4f4f4;
+    text-align: center;
+	height: 300px;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+/* Contenedor centrado con dos columnas */
+.contenedor-dos-columnas {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin: 20px auto;
+    max-width: 800px;
+    padding: 20px;
+    border: 2px solid #08587de3;
+    border-radius: 15px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilo de cada columna */
+.contenedor-dos-columnas .columna {
+    flex: 1;
+}
+
+/* Estilo para la imagen */
+.contenedor-dos-columnas .imagen img {
+    width: 45%;
+    border-radius: 10px;
+	height:150x;
+}
+
+/* Estilo para el texto */
+.contenedor-dos-columnas .texto h3 {
+    margin-bottom: 10px;
+    color: #08587de3;
+}
+
+.contenedor-dos-columnas .texto p {
+    font-size: 16px;
+    line-height: 1.6;
+}
+footer p{
+    font-size: 15px;
+}
